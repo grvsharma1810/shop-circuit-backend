@@ -12,7 +12,7 @@ const createWishlistItem = async (req, res) => {
         const wishlist = await Wishlist.findById(wishlistId);
         wishlist.wishlistItems.push(wishlistItem._id);
         await wishlist.save();
-        res.status(201).json({ success: true, wishlistItem });
+        res.status(201).json({ wishlistItem });
     } catch (err) {
         next(err);
     }

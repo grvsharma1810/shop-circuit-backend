@@ -35,7 +35,7 @@ app.use("/wishlist/:wishlistId/wishlist-items", authVerify, (req, res, next) => 
  * Note: DO not MOVE. This should be the last route
  */
 app.use((req, res) => {
-  res.status(404).json({ success: false, message: "route not found on server, please check" })
+  res.status(404).json({ message: "route not found on server, please check" })
 });
 
 

@@ -5,7 +5,7 @@ const getUser = async (req, res) => {
         const userId = req.userId;
         const user = await User.findById(userId);
         user.password = undefined;
-        res.status(200).json({ success: true, user })
+        res.status(200).json({ user })
     } catch (err) {
         next(err);
     }

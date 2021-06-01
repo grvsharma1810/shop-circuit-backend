@@ -12,7 +12,7 @@ const createCartItem = async (req, res) => {
         const cart = await Cart.findById(cartId);
         cart.cartItems.push(cartItem._id);
         await cart.save();
-        res.status(201).json({ success: true, cartItem });
+        res.status(201).json({ cartItem });
     } catch (err) {
         next(err);
     }

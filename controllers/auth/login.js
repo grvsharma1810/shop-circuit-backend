@@ -18,7 +18,7 @@ const login = async (req, res) => {
         }
         const token = jwt.sign({ userId: user._id, email: user.email }, process.env.JWT_SECRET_KEY, { expiresIn: '24h' })
         user.password = undefined;
-        res.status(200).json({ success: true, user, token })
+        res.status(200).json({ user, token })
     } catch (err) {
         err.customMessage = "unable to login user";
         next(err);
