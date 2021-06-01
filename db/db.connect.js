@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 
 const initializeDBConnection = async () => {
-  console.log(process.env.DATABASE_URL)
   try {
     await mongoose.connect(process.env.DATABASE_URL, {
       useUnifiedTopology: true,
