@@ -13,6 +13,7 @@ const cartRoutes = require("./routes/cart.routes");
 const cartItemRoutes = require("./routes/cartItem.routes");
 const wishlistRoutes = require("./routes/wishlist.routes");
 const wishlistItemRoutes = require("./routes/wishlistItem.routes");
+const fillProductsCollection = require('./db/populateProducts');
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(cors())
 
 initializeDBConnection();
+// fillProductsCollection();
 
 app.use("/", authRoutes);
 app.use("/products", productRoutes);
